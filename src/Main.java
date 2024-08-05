@@ -23,7 +23,7 @@ public class Main {
         employees[8] = createEmployee("Andreev A.A.", 4, 72300);
         employees[9] = createEmployee("Afanasiev A.A.", 5, 66000);
 
-        System.out.println();
+
         printEmployee();
         System.out.println();
         int result = calculateSalary();
