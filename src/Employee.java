@@ -1,4 +1,5 @@
 import java.util.Objects;
+
 public class Employee {
     private final String fullname;
     private int department;
@@ -31,7 +32,6 @@ public class Employee {
     }
 
 
-
     public void setDepartment(int department) {
         this.department = checkTheDepartmentNumber(department);
     }
@@ -41,14 +41,14 @@ public class Employee {
     }
 
 
-    private int checkTheDepartmentNumber (int department) {
+    private int checkTheDepartmentNumber(int department) {
         if (department < 1 || department > 5) {
             throw new IllegalArgumentException("Ошибка. Внесите корректный номер отдела");
         }
         return department;
     }
 
-    private int checkTheSalary (int salary) {
+    private int checkTheSalary(int salary) {
         if (salary < 0) {
             throw new IllegalArgumentException("Зарплата не может быть ниже нуля");
         }
