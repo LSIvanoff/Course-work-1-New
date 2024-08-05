@@ -9,7 +9,7 @@ public class Employee {
     public Employee(String fullname, int department, int salary) {
         this.id = ++count;
         this.fullname = fullname;
-        this.department = department;
+        this.department = checkTheDepartmentNumber(department);
         this.salary = salary;
     }
 
@@ -22,7 +22,7 @@ public class Employee {
         return department;
     }
 
-    public double getSalary() {
+    public int getSalary() {
         return salary;
     }
 
@@ -33,13 +33,27 @@ public class Employee {
 
 
     public void setDepartment(int department) {
-        this.department = department;
+        this.department = checkTheDepartmentNumber(department);
     }
 
     public void setSalary(int salary) {
         this.salary = salary;
     }
 
+
+    private int checkTheDepartmentNumber (int department) {
+        if (department < 1 || department > 5) {
+            throw new IllegalArgumentException("Ошибка. Внесите корректный номер отдела");
+        }
+        return department;
+    }
+
+    private int checkTheSalary (int salary) {
+        if (salary < 0) {
+            throw new IllegalArgumentException("Зарплата не может быть ниже нуля");
+        }
+        return salary;
+    }
 
 
     @Override
